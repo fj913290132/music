@@ -1,5 +1,6 @@
 import React, { Suspense, memo } from 'react'
 import { Outlet } from 'react-router-dom'
+import NavBar from './children-compoents/nav-bar'
 interface IProps {
   children?: React.ReactNode
 }
@@ -8,7 +9,7 @@ interface IProps {
 const discover: React.FC<IProps> = (props) => {
   return (
     <div>
-      discover
+      <NavBar />
       <Suspense fallback={<div>loading...</div>}>
         <Outlet />
       </Suspense>

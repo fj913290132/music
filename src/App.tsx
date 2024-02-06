@@ -1,16 +1,18 @@
 import React, { Suspense, useEffect } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from './router'
-import { getHomeList } from './api'
+
 import AppHeader from './components/app-header'
 import AppFooter from './components/app-footer'
+import { getHomeList } from './api'
 
 function App() {
   useEffect(() => {
+    console.log('')
     getHomeList().then((res) => {
-      console.log(res.banners)
+      console.log(res)
     })
-  })
+  }, [])
   return (
     <>
       <AppHeader />

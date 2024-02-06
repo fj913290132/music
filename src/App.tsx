@@ -1,32 +1,23 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from './router'
-import { changeState, increment } from './store/modules/demo'
-import { appShallowEqual, useAppDispatch, useAppSelector } from './hooks/hooks'
+import { getHomeList } from './api'
+import AppHeader from './components/app-header'
+import AppFooter from './components/app-footer'
 
 function App() {
-  const state = useAppSelector((state) => state.demo.count, appShallowEqual)
-  const dispatch = useAppDispatch()
-  function add() {
-    dispatch(increment())
-  }
-  function change() {
-    dispatch(changeState(123))
-  }
+  useEffect(() => {
+    getHomeList().then((res) => {
+      console.log(res.banners)
+    })
+  })
   return (
     <>
-      <div>当前计数:{state}</div>
-      <button onClick={change}>改变</button>
-      <button
-        onClick={() => {
-          add()
-        }}
-      >
-        +1
-      </button>
+      <AppHeader />
       <Suspense fallback={<div>Loading...</div>}>
         <div className="App">{useRoutes(routes)}</div>
       </Suspense>
+      <AppFooter />
     </>
   )
 }

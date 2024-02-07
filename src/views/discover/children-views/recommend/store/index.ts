@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import type { BannerRoot, initialStateType } from '../type'
+import type { initialStateType } from '../type'
 import { getBanners } from '../service'
 //第一种方法
 // export const fetchBannersDataAction = createAsyncThunk('banners', async () => {
-//   const res: BannerRoot = await getBanners()
+//   const res = await getBanners()
 //   console.log('fetchBannersDataAction', res)
 //   return res
 // })
@@ -12,7 +12,7 @@ import { getBanners } from '../service'
 export const fetchBannersDataAction = createAsyncThunk(
   'banners',
   async (payload, { dispatch }) => {
-    const res: BannerRoot = await getBanners()
+    const res = await getBanners()
     dispatch(setBanners(res.banners))
     //console.log('fetchBannersDataAction', payload)
   }

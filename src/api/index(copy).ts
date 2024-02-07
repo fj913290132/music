@@ -33,9 +33,6 @@ export interface Banner {
 export interface RootObject {
   banners: Banner[]
   code: number
-  nihao?: []
-  buhao?: any
-  caicai?: string
 }
 
 export const getHomeList: () => Promise<RootObject> = () => {
@@ -48,5 +45,26 @@ export const getHomeList: () => Promise<RootObject> = () => {
 export const getHomeList2 = () => {
   return hyRequest.get<RootObject>({
     url: '/banner'
+  })
+}
+
+export const getHomeList3: (cid: any) => Promise<RootObject> = (cid) => {
+  return request({
+    url: '/query',
+    method: 'put',
+    data: {
+      cid
+    }
+  })
+}
+
+type getHomeList4Type = (cid: any) => Promise<RootObject>
+export const getHomeList4: getHomeList4Type = (cid) => {
+  return request({
+    url: '/query',
+    method: 'put',
+    data: {
+      cid
+    }
   })
 }

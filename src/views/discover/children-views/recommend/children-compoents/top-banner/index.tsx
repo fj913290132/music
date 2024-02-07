@@ -30,7 +30,7 @@ const TopBanner: React.FC<IProps> = () => {
 
   /** 获取背景图片 */
   let bgImageUrl
-  if (currentIndex >= 0 && banners.length > 0) {
+  if (currentIndex >= 0 && banners?.length > 0) {
     bgImageUrl = banners[currentIndex].imageUrl + '?imageView&blur=40x20'
   }
   return (
@@ -51,7 +51,7 @@ const TopBanner: React.FC<IProps> = () => {
               beforeChange={handleBeforeChange}
               afterChange={handleAfterChange}
             >
-              {banners.map((item) => {
+              {banners?.map((item) => {
                 return (
                   <div className="banner-item" key={item.imageUrl}>
                     <img
@@ -64,7 +64,7 @@ const TopBanner: React.FC<IProps> = () => {
               })}
             </Carousel>
             <ul className="dots">
-              {banners.map((item, index) => {
+              {banners?.map((item, index) => {
                 return (
                   <li key={item.imageUrl}>
                     <span

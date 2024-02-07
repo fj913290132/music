@@ -8,12 +8,13 @@ import { getBanners } from '../service'
 //   return res
 // })
 
+//第二种方法 payload是usedispatch时可以传得参数
 export const fetchBannersDataAction = createAsyncThunk(
   'banners',
   async (payload, { dispatch }) => {
     const res: BannerRoot = await getBanners()
     dispatch(setBanners(res.banners))
-    console.log('fetchBannersDataAction', payload)
+    //console.log('fetchBannersDataAction', payload)
   }
 )
 const initialState: initialStateType = {

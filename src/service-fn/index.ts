@@ -16,7 +16,51 @@ instance.interceptors.request.use(
     // 在发送请求之前做些什么
     // 例如，添加请求头、身份验证等
     // config.headers.Authorization = 'Bearer ' + token;
-    return config
+    const { method = 'GET', data = {} } = config
+
+    switch (method.toUpperCase()) {
+      // 获取数据
+      case 'GET':
+        return config
+      // 添加数据
+      case 'POST':
+        // 表单提交 content-type = application/x-wwH-form-url-encoded
+        if (
+          config.headers['Content-Type'] ===
+          'application/x-wwH-form-url-encoded'
+        ) {
+          // 转参数 URLSearchParams/第三⽅库qs
+          const p = new URLSearchParams()
+          for (const key in data) {
+            p.append(key, data[key])
+          }
+          config.data = p
+          return config
+        }
+        // ⽂件提交 content-type = multipart/form-data
+        if (config.headers['Content-Type'] === 'multipart/form-data') {
+          const p = new FormData()
+          for (const key in data) {
+            p.append(key, data[key])
+          }
+          config.data = p
+          return config
+        }
+        // 默认 content-type = application/json
+        return config
+      // 修改数据 - 所有的数据的更新
+      case 'PUT':
+        return config
+      //删除数据
+      case 'DELETE':
+        return config
+      // 修改数据 - 部分的数据的更新
+      case 'PATCH':
+        return config
+      // 默认返回实例
+      default:
+        return config
+    }
   },
   (error: AxiosError) => {
     // 对请求错误做些什么

@@ -9,7 +9,9 @@ interface IProps {
 const Recommend: React.FC<IProps> = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(fetchBannersDataAction())
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    dispatch(fetchBannersDataAction({ name: '张三' }))
   }, [])
   return (
     <>

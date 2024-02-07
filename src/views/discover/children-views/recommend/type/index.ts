@@ -1,6 +1,4 @@
-import request from '@/service'
-
-export interface Banner {
+export interface BannerObject {
   imageUrl: string
   targetId: number
   adid?: any
@@ -29,14 +27,11 @@ export interface Banner {
   bannerBizType: string
 }
 
-export interface RootObject {
-  banners: Banner[]
+export interface BannerRoot {
+  banners: BannerObject[]
   code: number
 }
 
-export const getHomeList = (): Promise<RootObject> => {
-  return request({
-    url: '/banner',
-    method: 'get'
-  })
+export interface initialStateType {
+  banners: BannerObject[]
 }

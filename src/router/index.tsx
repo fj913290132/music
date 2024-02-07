@@ -7,20 +7,20 @@ import React from 'react'
 // import Foucs from '@/views/foucs'
 
 const Discover = React.lazy(() => import('@/views/discover'))
-const Album = React.lazy(() => import('@/views/discover/childrem-views/album'))
+const Album = React.lazy(() => import('@/views/discover/children-views/album'))
 const Artist = React.lazy(
-  () => import('@/views/discover/childrem-views/artist')
+  () => import('@/views/discover/children-views/artist')
 )
 const Djradio = React.lazy(
-  () => import('@/views/discover/childrem-views/djradio')
+  () => import('@/views/discover/children-views/djradio')
 )
 const Ranking = React.lazy(
-  () => import('@/views/discover/childrem-views/ranking')
+  () => import('@/views/discover/children-views/ranking')
 )
 const Recommend = React.lazy(
-  () => import('@/views/discover/childrem-views/recommend')
+  () => import('@/views/discover/children-views/recommend')
 )
-const Songs = React.lazy(() => import('@/views/discover/childrem-views/songs'))
+const Songs = React.lazy(() => import('@/views/discover/children-views/songs'))
 const Download = React.lazy(() => import('@/views/download'))
 const Mine = React.lazy(() => import('@/views/mine'))
 const Foucs = React.lazy(() => import('@/views/foucs'))

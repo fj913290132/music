@@ -4,15 +4,9 @@ import routes from './router'
 
 import AppHeader from './components/app-header'
 import AppFooter from './components/app-footer'
-import { getHomeList } from './api'
 
 function App() {
-  useEffect(() => {
-    console.log('')
-    getHomeList().then((res) => {
-      console.log(res)
-    })
-  }, [])
+  useEffect(() => {}, [])
   return (
     <>
       <AppHeader />

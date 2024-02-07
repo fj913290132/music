@@ -13,7 +13,7 @@ export const NacBarWrapper: React.FC<IProps> = styled.div`
     //console.log(props)
     return props.theme.color.primary
   }};
-
+  width: auto;
   .nav {
     display: flex;
     padding-left: 180px;

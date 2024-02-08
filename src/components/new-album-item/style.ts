@@ -4,15 +4,15 @@ export const AlbumItemWrapper = styled.div`
   width: 140px;
   margin: 15px 0;
 
-  .top {
+  .albun-item-top {
     position: relative;
 
     & > img {
-      width: 140px;
-      height: 140px;
+      width: 100px;
+      height: 100px;
     }
 
-    .cover {
+    .albun-item-cover {
       position: absolute;
       top: 0;
       left: 0;
@@ -51,9 +51,17 @@ export const AlbumItemWrapper = styled.div`
     }
   }
 
-  .bottom {
+  .albun-item-bottom {
     font-size: 14px;
     color: #000;
     margin-top: 5px;
+    .albun-item-name {
+      width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
   }
 `

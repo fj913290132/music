@@ -5,7 +5,7 @@ import type {
 } from 'axios'
 
 // 针对AxiosRequestConfig配置进行扩展
-export interface HYInterceptors<T = AxiosResponse> {
+export interface FJInterceptors<T = AxiosResponse> {
   requestSuccessFn?: (
     config: InternalAxiosRequestConfig
   ) => InternalAxiosRequestConfig
@@ -14,6 +14,6 @@ export interface HYInterceptors<T = AxiosResponse> {
   responseFailureFn?: (err: any) => any
 }
 
-export interface HYRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
-  interceptors?: HYInterceptors<T>
+export interface FJRequestConfig<T = AxiosResponse> extends AxiosRequestConfig {
+  interceptors?: FJInterceptors<T>
 }

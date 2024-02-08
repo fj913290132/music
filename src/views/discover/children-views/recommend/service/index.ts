@@ -1,8 +1,23 @@
-import hyRequest from '@/service-class'
-import { BannerRoot } from '../type'
+import { AlbumRoot, BannerRoot, HotRoot } from '../type'
+import fjRequest from '@/service-class'
 
 export function getBanners() {
-  return hyRequest.get<BannerRoot>({
+  return fjRequest.get<BannerRoot>({
     url: '/banner'
+  })
+}
+
+export function getHotRecommend(limit?: number) {
+  return fjRequest.get<HotRoot>({
+    url: '/personalized',
+    params: {
+      limit
+    }
+  })
+}
+
+export function getNewAlbum() {
+  return fjRequest.get<AlbumRoot>({
+    url: '/album/newest'
   })
 }

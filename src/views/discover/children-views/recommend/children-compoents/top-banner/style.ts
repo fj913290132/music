@@ -65,7 +65,7 @@ export const BannerControl = styled.div`
   top: 50%;
   transform: translateY(-50%);
 
-  .btn {
+  > .btn {
     position: absolute;
     width: 37px;
     height: 63px;
@@ -78,12 +78,12 @@ export const BannerControl = styled.div`
     }
   }
 
-  .left {
+  .left2 {
     left: -68px;
     background-position: 0 -360px;
   }
 
-  .right {
+  .right2 {
     right: -68px;
     background-position: 0 -508px;
   }

@@ -80,8 +80,8 @@ const TopBanner: React.FC<IProps> = () => {
           </BannerLeft>
           <BannerRight></BannerRight>
           <BannerControl>
-            <button className="btn left" onClick={handlePrevClick}></button>
-            <button className="btn right" onClick={handleNextClick}></button>
+            <button className="btn left2" onClick={handlePrevClick}></button>
+            <button className="btn right2" onClick={handleNextClick}></button>
           </BannerControl>
         </div>
       </BannerWrapper>

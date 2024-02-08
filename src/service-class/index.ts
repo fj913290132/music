@@ -1,7 +1,7 @@
 import { BASE_URL, TIME_OUT } from './config'
-import HYRequest from './request'
+import FJRequest from './request'
 
-const hyRequest = new HYRequest({
+const fjRequest = new FJRequest({
   baseURL: BASE_URL,
   timeout: TIME_OUT,
   interceptors: {
@@ -24,4 +24,4 @@ const hyRequest = new HYRequest({
   }
 })
 
-export default hyRequest
+export default fjRequest

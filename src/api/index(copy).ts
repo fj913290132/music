@@ -1,5 +1,5 @@
 import request from '@/service-fn'
-import hyRequest from '@/service-class'
+import fjRequest from '@/service-class'
 
 export interface Banner {
   imageUrl: string
@@ -43,7 +43,7 @@ export const getHomeList: () => Promise<RootObject> = () => {
 }
 
 export const getHomeList2 = () => {
-  return hyRequest.get<RootObject>({
+  return fjRequest.get<RootObject>({
     url: '/banner'
   })
 }

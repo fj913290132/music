@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { initialStateType } from '../type'
-import { getBanners } from '../service'
+import { getBanners, getHotRecommend, getNewAlbum } from '../service'
 //第一种方法
 // export const fetchBannersDataAction = createAsyncThunk('banners', async () => {
 //   const res = await getBanners()
@@ -17,8 +17,26 @@ export const fetchBannersDataAction = createAsyncThunk(
     //console.log('fetchBannersDataAction', payload)
   }
 )
+
+export const fetchHotRecommendDataAction = createAsyncThunk(
+  'banners',
+  async (payload, { dispatch }) => {
+    const res = await getHotRecommend(8)
+    dispatch(setHOtRecommend(res.result))
+  }
+)
+export const fetchNewAkbunDataAction = createAsyncThunk(
+  'banners',
+  async (payload, { dispatch }) => {
+    const res = await getNewAlbum()
+    dispatch(setNewAlbums(res.albums))
+  }
+)
+
 const initialState: initialStateType = {
-  banners: []
+  banners: [],
+  hotRecommend: [],
+  newAlbums: []
 }
 
 const recommendSlice = createSlice({
@@ -27,6 +45,12 @@ const recommendSlice = createSlice({
   reducers: {
     setBanners(state, { payload }) {
       state.banners = payload
+    },
+    setHOtRecommend(state, { payload }) {
+      state.hotRecommend = payload
+    },
+    setNewAlbums(state, { payload }) {
+      state.newAlbums = payload
     }
   }
   //第一种方法
@@ -37,4 +61,5 @@ const recommendSlice = createSlice({
   // }
 })
 export default recommendSlice.reducer
-export const { setBanners } = recommendSlice.actions
+export const { setBanners, setHOtRecommend, setNewAlbums } =
+  recommendSlice.actions

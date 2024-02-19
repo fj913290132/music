@@ -4,13 +4,17 @@ import {
   fetchBannersDataAction,
   fetchHotRecommendDataAction,
   fetchNewAkbunDataAction,
-  fetchRankingDataAction
+  fetchRankingDataAction,
+  fetchSettleSingersDataAction
 } from './store'
 import TopBanner from './children-compoents/top-banner'
 import { RecommendWrapper } from './style'
 import HotRecommend from './children-compoents/hot-recommend'
 import NewAlbum from './children-compoents/new-album'
 import TopRanking from './children-compoents/top-ranking'
+import UserLogin from './children-compoents/user-login'
+import SettleSinger from './children-compoents/settle-singer'
+import HotAnchor from './children-compoents/hot-anchor'
 interface IProps {
   children?: React.ReactNode
 }
@@ -24,6 +28,7 @@ const Recommend: React.FC<IProps> = () => {
     dispatch(fetchHotRecommendDataAction())
     dispatch(fetchNewAkbunDataAction())
     dispatch(fetchRankingDataAction())
+    dispatch(fetchSettleSingersDataAction())
   }, [])
   return (
     <>
@@ -35,7 +40,11 @@ const Recommend: React.FC<IProps> = () => {
             <NewAlbum />
             <TopRanking />
           </div>
-          <div className=" right ">right</div>
+          <div className=" right ">
+            <UserLogin />
+            <SettleSinger />
+            <HotAnchor />
+          </div>
         </div>
       </RecommendWrapper>
     </>

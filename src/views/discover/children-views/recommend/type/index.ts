@@ -3,6 +3,7 @@ export interface initialStateType {
   hotRecommend: HotResult[]
   newAlbums: Album[]
   rankings: Playlist[]
+  settleSingers: settleSingersType[]
 }
 export interface BannerObject {
   imageUrl: string
@@ -449,4 +450,30 @@ export interface ChargeInfoList {
   chargeUrl: any
   chargeMessage: any
   chargeType: number
+}
+
+export interface settleSingersRootType {
+  artists: settleSingersType[]
+  more: boolean
+  code: number
+}
+
+export interface settleSingersType {
+  albumSize: number
+  alias: string[]
+  briefDesc: string
+  fansCount: number
+  followed: boolean
+  id: number
+  img1v1Id: number
+  img1v1Id_str: string
+  img1v1Url: string
+  musicSize: number
+  name: string
+  picId: number
+  picId_str: string
+  picUrl: string
+  topicPerson: number
+  trans: string
+  accountId?: number
 }

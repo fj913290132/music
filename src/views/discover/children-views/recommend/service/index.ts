@@ -1,4 +1,10 @@
-import { AlbumRoot, BannerRoot, HotRoot, rankingsRoot } from '../type'
+import {
+  AlbumRoot,
+  BannerRoot,
+  HotRoot,
+  rankingsRoot,
+  settleSingersRootType
+} from '../type'
 import fjRequest from '@/service-class'
 
 export function getBanners() {
@@ -26,6 +32,15 @@ export function getPlaylistDetail(id: number) {
     url: '/playlist/detail',
     params: {
       id
+    }
+  })
+}
+
+export function getArtisList(limit = 5) {
+  return fjRequest.get<settleSingersRootType>({
+    url: '/artist/list',
+    params: {
+      limit
     }
   })
 }

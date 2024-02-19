@@ -8,6 +8,7 @@ export const RecommendWrapper = styled.div`
     background-image: url(${require('@/assets/img/wrap-bg.png')});
   }
   .left {
+    box-sizing: border-box;
     padding: 20px;
     width: 729px;
   }

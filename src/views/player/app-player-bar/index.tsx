@@ -7,7 +7,12 @@ interface IProps {
 const AppPlayerBar: React.FC<IProps> = () => {
   return (
     <>
-      <AppPlayerBarWrapper className="sprite_playbar">
+      <AppPlayerBarWrapper
+        className="sprite_playbar"
+        ref={(el) => {
+          el && el.style.setProperty('bottom', '0')
+        }}
+      >
         <div>AppPlayerBar</div>
       </AppPlayerBarWrapper>
     </>

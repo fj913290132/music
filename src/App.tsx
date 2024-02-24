@@ -18,6 +18,7 @@ function App() {
         <div className="App">{useRoutes(routes)}</div>
       </Suspense>
       <AppFooter />
+
       <AppPlayerBar />
     </>
   )

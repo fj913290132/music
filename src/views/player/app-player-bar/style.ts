@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 export const AppPlayerBarWrapper = styled.div`
@@ -23,9 +24,10 @@ export const AppPlayerBarWrapper = styled.div`
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IBarControl {
-  isPlaying: boolean
+  children?: React.ReactNode
+  $isplaying: any
 }
-export const BarControl = styled.div`
+export const BarControl: React.FC<IBarControl> = styled.div`
   display: flex;
   align-items: center;
 
@@ -44,7 +46,8 @@ export const BarControl = styled.div`
     width: 36px;
     height: 36px;
     margin: 0 8px;
-    background-position: 0 -165px;
+    background-position: 0
+      ${(props) => (props.$isplaying ? '-165px' : '-204px')};
   }
 
   .next {

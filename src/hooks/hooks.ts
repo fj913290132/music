@@ -6,8 +6,8 @@ import {
   shallowEqual
 } from 'react-redux'
 
-type stateType = typeof store.getState
-type IrootState = ReturnType<stateType>
+export type stateType = typeof store.getState
+export type IrootState = ReturnType<stateType>
 export const useAppSelector: TypedUseSelectorHook<IrootState> = useSelector
 
 type AppDispatch = typeof store.dispatch

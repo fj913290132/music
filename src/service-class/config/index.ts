@@ -1,5 +1,5 @@
 // 1.手动切换
-export const BASE_URL = 'http://codercba.com:9002'
+export const BASE_URL = 'http://81.70.195.195/api'
 //export const BASE_URL = 'http://localhost:7000'
 export const TIME_OUT = 10000
 

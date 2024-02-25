@@ -66,8 +66,9 @@ export const fetchRankingDataAction = createAsyncThunk(
     }
 
     Promise.all(promises).then((res) => {
-      const playlists: Playlist[] = res.map((item) => item.playlist)
-      console.log(playlists)
+      const playlists: Playlist[] = res
+        .filter((item) => item.playlist)
+        .map((item) => item.playlist)
       dispatch(setRankingsAction(playlists))
     })
   }

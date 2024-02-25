@@ -6,7 +6,7 @@ import axios, {
 
 // 创建 Axios 实例
 const instance = axios.create({
-  baseURL: 'http://codercba.com:9002', // 设置基础 URL
+  baseURL: 'http://81.70.195.195/api', // 设置基础 URL
   timeout: 5000 // 设置请求超时时间
 })
 
